@@ -1,16 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kothari Readymade | Premium Clothing Store</title>
-    <meta name="description"
-        content="Kothari Readymade — a trusted local clothing destination for men, women, and kids. Trendy fashion, everyday essentials, and festive wear under one roof." />
-    <meta name="theme-color" content="#111827" />
+    <meta name="description" content="Kothari Readymade — a trusted local clothing destination for men, women, and kids. Trendy fashion, everyday essentials, and festive wear under one roof.">
+    <meta name="theme-color" content="#111827">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg: #101014;
@@ -30,71 +27,67 @@
         }
 
         * {
-            box-sizing: border-box
-        }
-
-        html,
-        body {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
+        }
+
+        html, body {
             background: linear-gradient(180deg, #0b0f17, #0b0f17 60%, #0a1220);
             color: var(--text);
-            font-family: Inter, system-ui, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-            scroll-behavior: smooth
+            font-family: Inter, system-ui, sans-serif;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+            width: 100%;
         }
 
         a {
             color: inherit;
-            text-decoration: none
+            text-decoration: none;
         }
 
         img {
             max-width: 100%;
-            display: block
+            display: block;
         }
 
         .container {
             max-width: var(--max);
             margin: 0 auto;
-            padding: 0 20px
+            padding: 0 20px;
         }
 
-        /* Announcement */
         .announce {
             background: linear-gradient(90deg, var(--brand), var(--brand-2));
             color: #03261f;
             padding: 10px 16px;
             text-align: center;
             font-weight: 700;
-            letter-spacing: .2px
+            letter-spacing: .2px;
         }
 
-        .announce small {
-            font-weight: 600;
-            opacity: .9
-        }
-
-        /* Header */
         header {
             position: sticky;
             top: 0;
             z-index: 50;
             background: rgba(11, 15, 23, .72);
             backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(148, 163, 184, .12)
+            border-bottom: 1px solid rgba(148, 163, 184, .12);
         }
 
         .nav {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            height: 72px
+            height: 72px;
+            position: sticky;
+            z-index: 10000;
         }
 
         .brand {
             display: flex;
             align-items: center;
-            gap: 12px
+            gap: 12px;
         }
 
         .logo {
@@ -102,30 +95,30 @@
             height: 38px;
             border-radius: 12px;
             background: conic-gradient(from 180deg at 50% 50%, var(--brand), var(--brand-2));
-            box-shadow: var(--shadow)
+            box-shadow: var(--shadow);
         }
 
         .title {
             font-weight: 800;
-            letter-spacing: .3px
+            letter-spacing: .3px;
         }
 
         .title span {
             opacity: .7;
-            font-weight: 600
+            font-weight: 600;
         }
 
         .navlinks {
             display: flex;
-            gap: 22px
+            gap: 22px;
         }
 
         .navlinks a {
-            opacity: .85
+            opacity: .85;
         }
 
         .navlinks a:hover {
-            opacity: 1
+            opacity: 1;
         }
 
         .cta {
@@ -134,10 +127,10 @@
             gap: 8px;
             background: linear-gradient(90deg, var(--brand), var(--brand-2));
             color: #04271f;
-            padding: 10px 14px;
+            padding: 10px 16px;
             border-radius: 999px;
             font-weight: 700;
-            box-shadow: var(--shadow)
+            box-shadow: var(--shadow);
         }
 
         .menu-btn {
@@ -145,28 +138,39 @@
             background: none;
             border: 0;
             color: var(--text);
-            font-size: 20px
+            font-size: 20px;
+            cursor: pointer;
         }
 
-        /* Mobile menu */
         .mobile {
-            display: none
+            display: none;
+            position: fixed;
+            top: 72px;
+            left: 0;
+            width: 100%;
+            background: var(--bg);
+            padding: 16px;
+            border-top: 1px solid rgba(148, 163, 184, 0.12);
+            z-index: 99;
         }
 
         .mobile.open {
-            display: block
+            display: block;
+            animation: slideDown 0.3s ease-out;
         }
 
         .mobile a {
             display: block;
-            padding: 14px 0;
-            border-top: 1px solid rgba(148, 163, 184, .12)
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(148, 163, 184, 0.1);
         }
 
-        /* Hero */
         .hero {
             position: relative;
-            overflow: hidden
+            overflow: hidden;
+            /* margin: 50px 0; */
+            margin: 50px;
+            margin-top: -30px;
         }
 
         .hero .inner {
@@ -174,7 +178,7 @@
             grid-template-columns: 1.2fr 1fr;
             gap: 34px;
             align-items: center;
-            padding: 60px 0
+            padding: 60px 0;
         }
 
         .badge {
@@ -186,33 +190,33 @@
             padding: 6px 12px;
             border: 1px solid rgba(34, 211, 238, .35);
             border-radius: 999px;
-            font-size: 13px
+            font-size: 13px;
         }
 
         .h1 {
             font-size: 46px;
             line-height: 1.1;
             margin: 16px 0 12px;
-            font-weight: 900
+            font-weight: 900;
         }
 
         .h1 .grad {
             background: linear-gradient(90deg, var(--brand), var(--brand-2));
             -webkit-background-clip: text;
             background-clip: text;
-            color: transparent
+            color: transparent;
         }
 
         .lead {
             color: var(--muted);
-            font-size: 18px
+            font-size: 18px;
         }
 
         .hero-cta {
             margin-top: 24px;
             display: flex;
             gap: 14px;
-            flex-wrap: wrap
+            flex-wrap: wrap;
         }
 
         .btn {
@@ -224,17 +228,20 @@
             color: var(--text);
             padding: 12px 16px;
             border-radius: 14px;
-            font-weight: 700
+            font-weight: 700;
+            cursor: pointer;
+            min-height: 44px;
+            justify-content: center;
         }
 
         .btn:hover {
-            border-color: rgba(255, 255, 255, .35)
+            border-color: rgba(255, 255, 255, .35);
         }
 
         .btn-primary {
             background: linear-gradient(90deg, var(--brand), var(--brand-2));
             color: #052b23;
-            border-color: transparent
+            border-color: transparent;
         }
 
         .hero-card {
@@ -243,32 +250,21 @@
             border: 1px solid rgba(148, 163, 184, .12);
             border-radius: var(--radius-lg);
             padding: 16px;
-            box-shadow: var(--shadow)
+            box-shadow: var(--shadow);
         }
 
         .hero-img {
-            /* aspect-ratio: 4/5; */
             border-radius: var(--radius);
             overflow: hidden;
             background: linear-gradient(180deg, rgba(255, 255, 255, .06), transparent);
-            border: 1px solid rgba(148, 163, 184, .12)
-        }
-
-        .hero-img .ph {
-            height: 100%;
+            border: 1px solid rgba(148, 163, 184, .12);
+            aspect-ratio: 4/3;
             display: grid;
             place-items: center;
             color: #99f6e4;
             opacity: .8;
-
         }
 
-        .hero {
-            margin: 50px;
-            margin-top: -40px;
-        }
-
-        /* Sections */
         section {
             padding: 64px 0;
         }
@@ -278,31 +274,30 @@
             align-items: end;
             justify-content: space-between;
             gap: 18px;
-            margin-bottom: 26px
+            margin-bottom: 26px;
         }
 
         .section-head h2 {
             font-size: 28px;
-            margin: 0
+            margin: 0;
         }
 
         .section-head p {
             color: var(--muted);
-            max-width: 650px
+            max-width: 650px;
         }
 
-        /* Categories */
         .grid {
             display: grid;
-            gap: 18px
+            gap: 18px;
         }
 
         .grid-3 {
-            grid-template-columns: repeat(3, 1fr)
+            grid-template-columns: repeat(3, 1fr);
         }
 
         .grid-4 {
-            grid-template-columns: repeat(4, 1fr)
+            grid-template-columns: repeat(4, 1fr);
         }
 
         .card {
@@ -310,12 +305,12 @@
             border: 1px solid rgba(148, 163, 184, .12);
             border-radius: var(--radius);
             overflow: hidden;
-            transition: transform .2s ease, border-color .2s ease
+            transition: transform .2s ease, border-color .2s ease;
         }
 
         .card:hover {
             transform: translateY(-3px);
-            border-color: rgba(255, 255, 255, .25)
+            border-color: rgba(255, 255, 255, .25);
         }
 
         .card-img {
@@ -323,11 +318,11 @@
             background: linear-gradient(135deg, rgba(16, 185, 129, .15), rgba(34, 211, 238, .10));
             display: grid;
             place-items: center;
-            color: #99f6e4
+            color: #99f6e4;
         }
 
         .card-body {
-            padding: 14px
+            padding: 14px;
         }
 
         .chip {
@@ -339,35 +334,34 @@
             color: #8efad3;
             padding: 4px 10px;
             border-radius: 999px;
-            font-size: 12px
+            font-size: 12px;
         }
 
-        /* Products */
         .product {
             display: flex;
-            flex-direction: column
+            flex-direction: column;
         }
 
         .price {
             display: flex;
             align-items: center;
             gap: 10px;
-            margin-top: 6px
+            margin-top: 6px;
         }
 
         .price .mrp {
             text-decoration: line-through;
-            color: #94a3b867
+            color: #94a3b867;
         }
 
         .star {
-            font-size: 12px
+            font-size: 12px;
         }
 
         .actions {
             display: flex;
             gap: 10px;
-            margin-top: 10px
+            margin-top: 10px;
         }
 
         .toast {
@@ -383,51 +377,49 @@
             opacity: 0;
             transform: translateY(10px);
             transition: all .25s ease;
-            z-index: 60
+            z-index: 60;
         }
 
         .toast.show {
             opacity: 1;
-            transform: translateY(0)
+            transform: translateY(0);
         }
 
-        /* Testimonials */
         .testi {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 18px
+            gap: 18px;
         }
 
         .quote {
             font-size: 14px;
-            color: #cbd5e1
+            color: #cbd5e1;
         }
 
         .who {
             margin-top: 10px;
             color: #93c5fd;
-            font-weight: 700
+            font-weight: 700;
         }
 
-        /* Info */
         .info {
             display: grid;
             grid-template-columns: 1.3fr .9fr;
-            gap: 20px
+            gap: 20px;
         }
 
         .hours {
             list-style: none;
             margin: 0;
             padding: 0;
-            color: #cbd5e1
+            color: #cbd5e1;
         }
 
         .hours li {
             display: flex;
             justify-content: space-between;
             border-bottom: 1px dashed rgba(148, 163, 184, .2);
-            padding: 8px 0
+            padding: 8px 0;
         }
 
         .map {
@@ -435,36 +427,30 @@
             aspect-ratio: 4/3;
             width: 100%;
             border-radius: var(--radius);
-            overflow: hidden
+            overflow: hidden;
         }
 
-        /* Footer */
         footer {
             border-top: 1px solid rgba(148, 163, 184, .12);
-            background: #0a1220
+            background: #0a1220;
         }
 
         .foot {
             display: grid;
             grid-template-columns: 2fr 1fr 1fr;
             gap: 22px;
-            padding: 34px 0
+            padding: 34px 0;
         }
 
         .foot a {
-            color: #cbd5e1
+            color: #cbd5e1;
         }
 
         .copy {
             padding: 14px 0;
             color: #94a3b8;
             border-top: 1px solid rgba(148, 163, 184, .12);
-            font-size: 14px
-        }
-
-        /* Utilities */
-        .hidden {
-            display: none
+            font-size: 14px;
         }
 
         .pill {
@@ -474,186 +460,66 @@
             border: 1px solid rgba(148, 163, 184, .25);
             padding: 6px 12px;
             border-radius: 999px;
-            color: #cbd5e1
-        }
-
-        .sr-only {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            padding: 0;
-            margin: -1px;
-            overflow: hidden;
-            clip: rect(0, 0, 0, 0);
-            white-space: nowrap;
-            border: 0
-        }
-
-        .center {
-            text-align: center
+            color: #cbd5e1;
         }
 
         .sep {
             height: 1px;
             background: linear-gradient(90deg, transparent, rgba(148, 163, 184, .25), transparent);
-            margin: 26px 0
+            margin: 26px 0;
         }
 
-        /* Responsive */
-        @media (max-width:1000px) {
+        #toTop {
+            position: fixed;
+            right: 18px;
+            bottom: 84px;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity .2s ease;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 1000px) {
             .hero .inner {
                 grid-template-columns: 1fr;
-                gap: 18px
+                gap: 18px;
             }
 
-            .testi,
-            .info {
-                grid-template-columns: 1fr
+            .testi, .info {
+                grid-template-columns: 1fr;
             }
 
             .grid-4 {
-                grid-template-columns: repeat(2, 1fr)
+                grid-template-columns: repeat(2, 1fr);
             }
         }
 
-        @media (max-width:768px) {
+        @media (max-width: 768px) {
             .navlinks {
-                display: none
+                display: none;
             }
 
             .menu-btn {
-                display: block
+                display: block;
             }
 
-            .grid-3 {
-                grid-template-columns: repeat(2, 1fr)
+            .grid-3, .grid-4 {
+                grid-template-columns: 1fr;
             }
 
             .foot {
-                grid-template-columns: 1fr
+                grid-template-columns: 1fr;
             }
 
             .h1 {
-                font-size: 36px
-            }
-        }
-
-        @media (max-width:520px) {
-
-            .grid-4,
-            .grid-3 {
-                grid-template-columns: 1fr
+                font-size: 36px;
             }
 
-            .h1 {
-                font-size: 30px
-            }
-        }
-
-        /* ===== MOBILE RESPONSIVE STYLES ===== */
-        @media (max-width: 768px) {
-
-            /* General mobile adjustments */
-            body {
-                font-size: 14px;
-                line-height: 1.5;
-            }
-
-            .container {
-                padding: 0 16px;
-            }
-
-            /* Header mobile styles */
-            header {
-                position: sticky;
-                top: 0;
-                z-index: 100;
-            }
-
-            .nav {
-                height: 60px;
-                padding: 0 16px;
-            }
-
-            .title {
-                font-size: 18px;
-            }
-
-            .navlinks {
-                display: none;
-            }
-
-            .menu-btn {
-                display: block;
-                font-size: 24px;
-                background: none;
-                border: none;
-                color: var(--text);
-                cursor: pointer;
-            }
-
-            /* Mobile menu */
-            .mobile {
-                display: none;
-                position: fixed;
-                top: 60px;
-                left: 0;
-                width: 100%;
-                background: var(--bg);
-                padding: 16px;
-                border-top: 1px solid rgba(148, 163, 184, 0.12);
-                z-index: 99;
-            }
-
-            .mobile.open {
-                display: block;
-            }
-
-            .mobile a {
-                display: block;
-                padding: 12px 0;
-                border-bottom: 1px solid rgba(148, 163, 184, 0.1);
-            }
-
-            /* Hero section mobile */
             .hero {
                 margin: 20px 0;
-                padding: 0;
             }
 
             .hero .inner {
-                grid-template-columns: 1fr;
-                gap: 24px;
-                padding: 40px 0;
-            }
-
-            .h1 {
-                font-size: 28px;
-                margin: 12px 0;
-            }
-
-            .lead {
-                font-size: 16px;
-            }
-
-            .hero-cta {
-                flex-direction: column;
-                gap: 12px;
-                margin-top: 20px;
-            }
-
-            .btn {
-                width: 100%;
-                justify-content: center;
-                padding: 14px 16px;
-            }
-
-            .hero-card {
-                margin-top: 20px;
-            }
-
-            /* Sections mobile */
-            section {
                 padding: 40px 0;
             }
 
@@ -661,165 +527,40 @@
                 flex-direction: column;
                 align-items: flex-start;
                 gap: 12px;
-                margin-bottom: 20px;
             }
 
-            .section-head h2 {
-                font-size: 24px;
-            }
-
-            /* Grid adjustments for mobile */
-            .grid-4,
-            .grid-3 {
-                grid-template-columns: 1fr;
-                gap: 16px;
-            }
-
-            /* Cards mobile */
-            .card {
-                border-radius: 16px;
-            }
-
-            .card-img {
-                aspect-ratio: 4/3;
-            }
-
-            /* Product actions */
-            .actions {
+            .hero-cta {
                 flex-direction: column;
-                gap: 8px;
             }
 
-            .actions .btn {
+            .btn {
                 width: 100%;
             }
 
-            /* Testimonials mobile */
-            .testi {
-                grid-template-columns: 1fr;
-                gap: 16px;
-            }
-
-            /* Info section mobile */
-            .info {
-                grid-template-columns: 1fr;
-                gap: 16px;
-            }
-
-            /* Footer mobile */
-            .foot {
-                grid-template-columns: 1fr;
-                gap: 24px;
-                padding: 24px 0;
-            }
-
-            /* Form adjustments */
-            #contactForm input,
-            #contactForm textarea {
-                padding: 14px;
-                font-size: 16px;
-                /* Prevents zoom on iOS */
-            }
-
-            /* Map iframe */
-            .map {
-                height: 300px;
-            }
-
-            /* Announcement bar */
-            .announce {
-                padding: 8px 12px;
-                font-size: 14px;
-            }
-
-            /* Back to top button */
-            #toTop {
+            .toast {
                 right: 16px;
-                bottom: 80px;
-                padding: 10px 14px;
+                bottom: 16px;
+                left: 16px;
+                text-align: center;
             }
         }
 
-        /* Small mobile devices (up to 480px) */
         @media (max-width: 480px) {
             .h1 {
-                font-size: 24px;
+                font-size: 28px;
             }
-
+            
+            .container {
+                padding: 0 16px;
+            }
+            
             .hero .inner {
                 padding: 30px 0;
             }
-
-            .badge {
-                font-size: 12px;
-                padding: 4px 10px;
+            
+            .section-head h2 {
+                font-size: 24px;
             }
-
-            .pill {
-                font-size: 12px;
-                padding: 4px 10px;
-            }
-
-            .card-body {
-                padding: 12px;
-            }
-
-            .price {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 4px;
-            }
-        }
-
-        /* Tablet adjustments (769px to 1024px) */
-        @media (min-width: 769px) and (max-width: 1024px) {
-            .grid-4 {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .grid-3 {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .hero .inner {
-                gap: 30px;
-            }
-
-            .h1 {
-                font-size: 36px;
-            }
-        }
-
-        /* Prevent horizontal scrolling on all devices */
-        html,
-        body {
-            overflow-x: hidden;
-            width: 100%;
-        }
-
-        /* Improve touch targets for mobile */
-        @media (max-width: 768px) {
-
-            button,
-            .btn,
-            a[role="button"] {
-                min-height: 44px;
-                min-width: 44px;
-            }
-
-            /* Ensure text inputs are easily tappable */
-            input[type="text"],
-            input[type="tel"],
-            input[type="email"],
-            textarea {
-                font-size: 16px;
-                /* Prevents zoom on iOS */
-            }
-        }
-
-        /* Animation for mobile menu */
-        .mobile {
-            animation: slideDown 0.3s ease-out;
         }
 
         @keyframes slideDown {
@@ -827,51 +568,24 @@
                 opacity: 0;
                 transform: translateY(-10px);
             }
-
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
 
-        /* Toast notification mobile adjustment */
-        .toast {
-            right: 16px;
-            bottom: 16px;
-            left: 16px;
-            text-align: center;
-        }
-
-        /* WhatsApp CTA button mobile adjustment */
-        .cta {
-            padding: 10px 16px;
-            font-size: 14px;
+        input, textarea {
+            font-size: 16px;
+            width: 100%;
+            margin: 6px 0 8px;
+            padding: 12px;
+            border-radius: 12px;
+            border: 1px solid rgba(148,163,184,.3);
+            background: #0b1321;
+            color: #e5e7eb;
         }
     </style>
-    <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ClothingStore",
-    "name": "Kothari Readymade",
-    "description": "Local clothing store for men, women and kids.",
-    "image": "",
-    "telephone": "+91 99999 99999",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Main Market Road",
-      "addressLocality": "Your City",
-      "addressRegion": "Maharashtra",
-      "postalCode": "422001",
-      "addressCountry": "IN"
-    },
-    "openingHours": [
-      "Mo-Su 10:00-21:00"
-    ],
-    "url": "https://www.kothari-readymade.com/"
-  }
-  </script>
 </head>
-
 <body>
     <!-- Top announcement -->
     <div class="announce">
@@ -880,7 +594,7 @@
 
     <!-- Header -->
     <header>
-        <div class="container nav" aria-label="Main">
+        <div class="container nav">
             <a class="brand" href="#home">
                 <span class="logo" aria-hidden="true"></span>
                 <div class="title">Kothari <span>Readymade</span></div>
@@ -893,18 +607,16 @@
                 <a href="#visit">Visit</a>
             </nav>
             <div style="display:flex;align-items:center;gap:10px">
-                <a class="cta" href="apparel_entrepreneurship_what_your_clothing_brand_needs_to_stay_relevant_2019.jpg"
-                    target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                        <path d="M20 3H4a1 1 0 0 0-1 1v16l4-4h13a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1Z" stroke="#052b23"
-                            stroke-width="1.5" />
+                <a class="cta" href="https://wa.me/919999999999" target="_blank" rel="noopener">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                        <path d="M20 3H4a1 1 0 0 0-1 1v16l4-4h13a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1Z" stroke="#052b23" stroke-width="1.5"/>
                     </svg>
                     WhatsApp Us
                 </a>
-                <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mobileMenu">☰</button>
+                <button class="menu-btn" id="menuBtn">☰</button>
             </div>
         </div>
-        <div id="mobileMenu" class="container mobile" role="dialog" aria-modal="false">
+        <div id="mobileMenu" class="mobile">
             <a href="#categories">Categories</a>
             <a href="#new">New Arrivals</a>
             <a href="#offers">Offers</a>
@@ -918,16 +630,13 @@
         <div class="container inner">
             <div>
                 <span class="badge">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                        <path
-                            d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27Z"
-                            stroke="#67e8f9" />
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                        <path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27Z" stroke="#67e8f9"/>
                     </svg>
                     Trusted by thousands of local shoppers
                 </span>
                 <h1 class="h1">Style for <span class="grad">everyday</span> & festivals</h1>
-                <p class="lead">Discover curated menswear, womenswear and kidswear — quality fabrics, modern fits, and
-                    timeless classics. Visit our store to feel the fabric and get the perfect fit.</p>
+                <p class="lead">Discover curated menswear, womenswear and kidswear — quality fabrics, modern fits, and timeless classics. Visit our store to feel the fabric and get the perfect fit.</p>
                 <div class="hero-cta">
                     <a class="btn btn-primary" href="#new">Shop New Arrivals</a>
                     <a class="btn" href="#visit">Get Directions</a>
@@ -941,13 +650,10 @@
             </div>
             <div class="hero-card">
                 <div class="hero-img">
-                    <!-- Replace placeholder with a product/banner image URL if desired -->
-                    <div class="ph"><img
-                            src="apparel_entrepreneurship_what_your_clothing_brand_needs_to_stay_relevant_2019.jpg"
-                            alt=""></div>
+                
+                    <div><img src="apparel_entrepreneurship_what_your_clothing_brand_needs_to_stay_relevant_2019.jpg" alt="">Store Image</div>
                 </div>
-                <div style="padding:12px 6px 6px;color:#a3e7ff">Trending: Linen shirts • Ethnic kurtas • Summer dresses
-                    • Kids sets</div>
+                <div style="padding:12px 6px 6px;color:#a3e7ff">Trending: Linen shirts • Ethnic kurtas • Summer dresses • Kids sets</div>
             </div>
         </div>
     </main>
@@ -957,30 +663,28 @@
         <div class="container">
             <div class="section-head">
                 <h2>Shop by Category</h2>
-                <p>From office-ready fits to party looks — explore what you need by category and drop by the store for
-                    trials.</p>
+                <p>From office-ready fits to party looks — explore what you need by category and drop by the store for trials.</p>
             </div>
             <div class="grid grid-4">
-                <!-- Category Card -->
-                <a class="card" href="#new" aria-label="Menswear">
+                <a class="card" href="#new">
                     <div class="card-img">Menswear</div>
                     <div class="card-body">
                         <div class="chip">Shirts • Trousers • Tees</div>
                     </div>
                 </a>
-                <a class="card" href="#new" aria-label="Womenswear">
+                <a class="card" href="#new">
                     <div class="card-img">Womenswear</div>
                     <div class="card-body">
                         <div class="chip">Kurtis • Dresses • Denim</div>
                     </div>
                 </a>
-                <a class="card" href="#new" aria-label="Kids">
+                <a class="card" href="#new">
                     <div class="card-img">Kids</div>
                     <div class="card-body">
                         <div class="chip">Sets • Ethnic • Casuals</div>
                     </div>
                 </a>
-                <a class="card" href="#new" aria-label="Ethnic & Festive">
+                <a class="card" href="#new">
                     <div class="card-img">Ethnic & Festive</div>
                     <div class="card-body">
                         <div class="chip">Kurtas • Sarees • Lehengas</div>
@@ -998,9 +702,8 @@
                 <p>Fresh drops this week. Limited pieces — call or WhatsApp to reserve for in-store pickup.</p>
             </div>
             <div class="grid grid-4">
-                <!-- Product Card Template - Duplicate & Replace Details -->
                 <div class="card product">
-                    <div class="card-img" aria-label="Product image">Linen Shirt</div>
+                    <div class="card-img">Linen Shirt</div>
                     <div class="card-body">
                         <div style="display:flex;justify-content:space-between;align-items:center">
                             <strong>Premium Linen Shirt</strong>
@@ -1008,9 +711,8 @@
                         </div>
                         <div class="price"><span>₹1,499</span> <span class="mrp">₹1,799</span></div>
                         <div class="actions">
-                            <button class="btn btn-sm add" data-name="Premium Linen Shirt">Reserve</button>
-                            <a class="btn" href="https://wa.me/919999999999?text=Reserve%20Premium%20Linen%20Shirt"
-                                target="_blank" rel="noopener">WhatsApp</a>
+                            <button class="btn add" data-name="Premium Linen Shirt">Reserve</button>
+                            <a class="btn" href="https://wa.me/919999999999?text=Reserve%20Premium%20Linen%20Shirt" target="_blank">WhatsApp</a>
                         </div>
                     </div>
                 </div>
@@ -1023,9 +725,8 @@
                         </div>
                         <div class="price"><span>₹1,299</span> <span class="mrp">₹1,599</span></div>
                         <div class="actions">
-                            <button class="btn btn-sm add" data-name="Floral Summer Dress">Reserve</button>
-                            <a class="btn" href="https://wa.me/919999999999?text=Reserve%20Floral%20Summer%20Dress"
-                                target="_blank" rel="noopener">WhatsApp</a>
+                            <button class="btn add" data-name="Floral Summer Dress">Reserve</button>
+                            <a class="btn" href="https://wa.me/919999999999?text=Reserve%20Floral%20Summer%20Dress" target="_blank">WhatsApp</a>
                         </div>
                     </div>
                 </div>
@@ -1038,9 +739,8 @@
                         </div>
                         <div class="price"><span>₹899</span> <span class="mrp">₹1,099</span></div>
                         <div class="actions">
-                            <button class="btn btn-sm add" data-name="Kids Co-ord Set">Reserve</button>
-                            <a class="btn" href="https://wa.me/919999999999?text=Reserve%20Kids%20Co-ord%20Set"
-                                target="_blank" rel="noopener">WhatsApp</a>
+                            <button class="btn add" data-name="Kids Co-ord Set">Reserve</button>
+                            <a class="btn" href="https://wa.me/919999999999?text=Reserve%20Kids%20Co-ord%20Set" target="_blank">WhatsApp</a>
                         </div>
                     </div>
                 </div>
@@ -1053,9 +753,8 @@
                         </div>
                         <div class="price"><span>₹1,899</span> <span class="mrp">₹2,299</span></div>
                         <div class="actions">
-                            <button class="btn btn-sm add" data-name="Men's Kurta Set">Reserve</button>
-                            <a class="btn" href="https://wa.me/919999999999?text=Reserve%20Men%27s%20Kurta%20Set"
-                                target="_blank" rel="noopener">WhatsApp</a>
+                            <button class="btn add" data-name="Men's Kurta Set">Reserve</button>
+                            <a class="btn" href="https://wa.me/919999999999?text=Reserve%20Men%27s%20Kurta%20Set" target="_blank">WhatsApp</a>
                         </div>
                     </div>
                 </div>
@@ -1068,8 +767,7 @@
                 <div class="card" style="padding:16px">
                     <strong>Combo Deal</strong>
                     <p class="lead">Buy 2 shirts & get flat 10% off. Mix & match across sizes.</p>
-                    <a class="btn" href="https://wa.me/919999999999?text=I%20want%20the%20Combo%20Deal" target="_blank"
-                        rel="noopener">Claim on WhatsApp</a>
+                    <a class="btn" href="https://wa.me/919999999999?text=I%20want%20the%20Combo%20Deal" target="_blank">Claim on WhatsApp</a>
                 </div>
                 <div class="card" style="padding:16px">
                     <strong>Weekend Offer</strong>
@@ -1090,48 +788,37 @@
         <div class="container">
             <div class="section-head">
                 <h2>Why shop at Kothari?</h2>
-                <p>We’re a family-run store known for genuine pricing, quality fabrics, and friendly assistance. Our
-                    customers become regulars because we remember your fit and style.</p>
+                <p>We're a family-run store known for genuine pricing, quality fabrics, and friendly assistance. Our customers become regulars because we remember your fit and style.</p>
             </div>
             <div class="testi">
                 <div class="card" style="padding:16px">
-                    <div class="quote">“Great collection and fair prices. The staff helped me find the perfect kurta for
-                        a family function.”</div>
+                    <div class="quote">"Great collection and fair prices. The staff helped me find the perfect kurta for a family function."</div>
                     <div class="who">— A. Sharma</div>
                 </div>
                 <div class="card" style="padding:16px">
-                    <div class="quote">“I always get my office shirts here. The fabric and fit are consistently good.”
-                    </div>
+                    <div class="quote">"I always get my office shirts here. The fabric and fit are consistently good."</div>
                     <div class="who">— R. Patil</div>
                 </div>
             </div>
 
             <div class="sep"></div>
 
-            <!-- Simple Contact Form (frontend only) -->
+            <!-- Simple Contact Form -->
             <div class="grid grid-3">
                 <div class="card" style="padding:16px">
                     <strong>Ask for availability</strong>
-                    <p class="lead">Tell us the size and category. We’ll reply on WhatsApp.</p>
+                    <p class="lead">Tell us the size and category. We'll reply on WhatsApp.</p>
                     <form id="contactForm">
-                        <label class="sr-only" for="name">Name</label>
-                        <input id="name" name="name" placeholder="Your name" required
-                            style="width:100%;margin:6px 0 8px;padding:12px;border-radius:12px;border:1px solid rgba(148,163,184,.3);background:#0b1321;color:#e5e7eb">
-                        <label class="sr-only" for="phone">Phone</label>
-                        <input id="phone" name="phone" placeholder="Phone / WhatsApp" required pattern="[+0-9\s-]{8,}"
-                            style="width:100%;margin:6px 0 8px;padding:12px;border-radius:12px;border:1px solid rgba(148,163,184,.3);background:#0b1321;color:#e5e7eb">
-                        <label class="sr-only" for="msg">Message</label>
-                        <textarea id="msg" name="msg" placeholder="I need a size 40 linen shirt (blue)…" required
-                            rows="3"
-                            style="width:100%;margin:6px 0 8px;padding:12px;border-radius:12px;border:1px solid rgba(148,163,184,.3);background:#0b1321;color:#e5e7eb"></textarea>
-                        <button class="btn btn-primary" type="submit" style="width:100%">Send on WhatsApp</button>
+                        <input id="name" name="name" placeholder="Your name" required>
+                        <input id="phone" name="phone" placeholder="Phone / WhatsApp" required pattern="[+0-9\s-]{8,}">
+                        <textarea id="msg" name="msg" placeholder="I need a size 40 linen shirt (blue)…" required rows="3"></textarea>
+                        <button class="btn btn-primary" type="submit">Send on WhatsApp</button>
                     </form>
-                    <div id="formNote" class="lead" style="display:none;margin-top:8px;color:#86efac">Opening WhatsApp…
-                    </div>
+                    <div id="formNote" style="display:none;margin-top:8px;color:#86efac">Opening WhatsApp…</div>
                 </div>
                 <div class="card" style="padding:16px">
                     <strong>Services</strong>
-                    <ul class="hours" style="margin-top:10px">
+                    <ul class="hours">
                         <li><span>Size Exchange</span><span>7 days</span></li>
                         <li><span>Alterations</span><span>Available</span></li>
                         <li><span>Gift Wrapping</span><span>Free</span></li>
@@ -1142,9 +829,9 @@
                     <strong>Follow us</strong>
                     <p class="lead">See latest drops on Instagram & Facebook.</p>
                     <div class="grid grid-3">
-                        <a class="card-img" href="#" aria-label="Instagram">Instagram</a>
-                        <a class="card-img" href="#" aria-label="Facebook">Facebook</a>
-                        <a class="card-img" href="#" aria-label="YouTube">YouTube</a>
+                        <a class="card-img" href="#">Instagram</a>
+                        <a class="card-img" href="#">Facebook</a>
+                        <a class="card-img" href="#">YouTube</a>
                     </div>
                 </div>
             </div>
@@ -1156,28 +843,25 @@
         <div class="container">
             <div class="section-head">
                 <h2>Visit the Store</h2>
-                <p>Try before you buy. We’re located in the heart of the market with easy parking nearby.</p>
+                <p>Try before you buy. We're located in the heart of the market with easy parking nearby.</p>
             </div>
             <div class="info">
                 <div class="card" style="padding:16px">
                     <strong>Store Address</strong>
-                    <p class="lead" style="margin-top:8px">Kothari Readymade<br> Main Market Road, Your City,
-                        Maharashtra 422001</p>
+                    <p class="lead" style="margin-top:8px">Kothari Readymade<br> Main Market Road, Your City, Maharashtra 422001</p>
                     <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px">
-                        <a class="btn btn-primary" href="https://maps.google.com/?q=Kothari%20Readymade%20Your%20City"
-                            target="_blank" rel="noopener">Open in Google Maps</a>
+                        <a class="btn btn-primary" href="https://maps.google.com/?q=Kothari%20Readymade%20Your%20City" target="_blank">Open in Google Maps</a>
                         <a class="btn" href="tel:+919999999999">Call</a>
-                        <a class="btn" href="https://wa.me/919999999999" target="_blank" rel="noopener">WhatsApp</a>
+                        <a class="btn" href="https://wa.me/919999999999" target="_blank">WhatsApp</a>
                     </div>
                     <div class="sep"></div>
                     <strong>Timings</strong>
-                    <ul class="hours" aria-label="Opening hours">
+                    <ul class="hours">
                         <li><span>Mon – Sun</span><span>10:00 AM – 9:00 PM</span></li>
                     </ul>
                 </div>
                 <div class="card" style="overflow:hidden">
-                    <iframe class="map" loading="lazy" allowfullscreen
-                        src="https://www.google.com/maps?q=Kothari%20Readymade%20Your%20City&output=embed"></iframe>
+                    <iframe class="map" loading="lazy" allowfullscreen src="https://www.google.com/maps?q=Kothari%20Readymade%20Your%20City&output=embed"></iframe>
                 </div>
             </div>
         </div>
@@ -1196,7 +880,7 @@
             </div>
             <div>
                 <strong>Quick Links</strong>
-                <ul class="hours" style="margin-top:10px">
+                <ul class="hours">
                     <li><a href="#categories">Categories</a></li>
                     <li><a href="#new">New Arrivals</a></li>
                     <li><a href="#offers">Offers</a></li>
@@ -1205,7 +889,7 @@
             </div>
             <div>
                 <strong>Policies</strong>
-                <ul class="hours" style="margin-top:10px">
+                <ul class="hours">
                     <li>7‑day size exchange</li>
                     <li>No-questions returns (store credit)</li>
                     <li>1‑year stitching warranty (alterations)</li>
@@ -1215,11 +899,9 @@
         <div class="container copy">© <span id="yr"></span> Kothari Readymade. All rights reserved.</div>
     </footer>
 
-    <div class="toast" id="toast" role="status" aria-live="polite">Added to reserve list</div>
+    <div class="toast" id="toast">Added to reserve list</div>
 
-    <a href="#home" id="toTop" class="btn"
-        style="position:fixed;right:18px;bottom:84px;opacity:0;pointer-events:none;transition:opacity .2s ease">↑
-        Top</a>
+    <a href="#home" id="toTop" class="btn">↑ Top</a>
 
     <script>
         // Mobile menu toggle
@@ -1227,11 +909,9 @@
         const mobileMenu = document.getElementById('mobileMenu');
         menuBtn.addEventListener('click', () => {
             mobileMenu.classList.toggle('open');
-            const open = mobileMenu.classList.contains('open');
-            menuBtn.setAttribute('aria-expanded', String(open));
         });
 
-        // Reserve buttons (demo toast)
+        // Reserve buttons
         const toast = document.getElementById('toast');
         function showToast(msg) {
             toast.textContent = msg || 'Added to reserve list';
@@ -1245,7 +925,7 @@
             })
         });
 
-        // Contact form -> open WhatsApp with pre-filled message
+        // Contact form -> open WhatsApp
         const form = document.getElementById('contactForm');
         const note = document.getElementById('formNote');
         form.addEventListener('submit', (e) => {
@@ -1254,7 +934,7 @@
             const phone = encodeURIComponent(form.phone.value.trim());
             const msg = encodeURIComponent(form.msg.value.trim());
             const text = `New enquiry from ${name}%0AContact: ${phone}%0A%0A${msg}`;
-            const number = '919999999999'; // TODO: replace with store WhatsApp number
+            const number = '919999999999';
             const url = `https://wa.me/${number}?text=${text}`;
             note.style.display = 'block';
             window.open(url, '_blank');
@@ -1275,16 +955,5 @@
         // Year
         document.getElementById('yr').textContent = new Date().getFullYear();
     </script>
-
-    <!--
-  🔧 QUICK CUSTOMIZATION GUIDE
-  1) Replace placeholder phone/WhatsApp numbers (find 919999999999) and email.
-  2) Update address in the Visit section and the JSON-LD schema above.
-  3) Swap hero/product images: replace .card-img/.hero-img placeholders with your image URLs or <img> tags.
-  4) Duplicate product cards to add more items. Adjust prices, names, and WhatsApp text.
-  5) If you have Instagram, replace social links under "Follow us".
-  6) Host as a single HTML file; no external JS/CSS needed except Google Fonts.
-  -->
 </body>
-
 </html>
