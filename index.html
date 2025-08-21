@@ -17,30 +17,17 @@
             --card: #1a1a20;
             --muted: #a3a3ad;
             --text: #f9fafb;
-
             --brand: #3b82f6;
-            /* royal blue */
             --brand-2: #f59e0b;
-            /* amber */
             --accent: #ec4899;
-            /* pink */
             --danger: #ef4444;
-            /* soft red */
             --ok: #22c55e;
-            /* green */
-
             --ring: 0 0 0 3px rgba(59, 130, 246, 0.4);
             --shadow: 0 12px 36px rgba(0, 0, 0, 0.55);
-
             --radius: 20px;
             --radius-lg: 32px;
             --max: 1320px;
         }
-
-
-
-
-
 
         * {
             box-sizing: border-box
@@ -561,6 +548,304 @@
             .h1 {
                 font-size: 30px
             }
+        }
+
+        /* ===== MOBILE RESPONSIVE STYLES ===== */
+        @media (max-width: 768px) {
+
+            /* General mobile adjustments */
+            body {
+                font-size: 14px;
+                line-height: 1.5;
+            }
+
+            .container {
+                padding: 0 16px;
+            }
+
+            /* Header mobile styles */
+            header {
+                position: sticky;
+                top: 0;
+                z-index: 100;
+            }
+
+            .nav {
+                height: 60px;
+                padding: 0 16px;
+            }
+
+            .title {
+                font-size: 18px;
+            }
+
+            .navlinks {
+                display: none;
+            }
+
+            .menu-btn {
+                display: block;
+                font-size: 24px;
+                background: none;
+                border: none;
+                color: var(--text);
+                cursor: pointer;
+            }
+
+            /* Mobile menu */
+            .mobile {
+                display: none;
+                position: fixed;
+                top: 60px;
+                left: 0;
+                width: 100%;
+                background: var(--bg);
+                padding: 16px;
+                border-top: 1px solid rgba(148, 163, 184, 0.12);
+                z-index: 99;
+            }
+
+            .mobile.open {
+                display: block;
+            }
+
+            .mobile a {
+                display: block;
+                padding: 12px 0;
+                border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+            }
+
+            /* Hero section mobile */
+            .hero {
+                margin: 20px 0;
+                padding: 0;
+            }
+
+            .hero .inner {
+                grid-template-columns: 1fr;
+                gap: 24px;
+                padding: 40px 0;
+            }
+
+            .h1 {
+                font-size: 28px;
+                margin: 12px 0;
+            }
+
+            .lead {
+                font-size: 16px;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+                gap: 12px;
+                margin-top: 20px;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+                padding: 14px 16px;
+            }
+
+            .hero-card {
+                margin-top: 20px;
+            }
+
+            /* Sections mobile */
+            section {
+                padding: 40px 0;
+            }
+
+            .section-head {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+                margin-bottom: 20px;
+            }
+
+            .section-head h2 {
+                font-size: 24px;
+            }
+
+            /* Grid adjustments for mobile */
+            .grid-4,
+            .grid-3 {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            /* Cards mobile */
+            .card {
+                border-radius: 16px;
+            }
+
+            .card-img {
+                aspect-ratio: 4/3;
+            }
+
+            /* Product actions */
+            .actions {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .actions .btn {
+                width: 100%;
+            }
+
+            /* Testimonials mobile */
+            .testi {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            /* Info section mobile */
+            .info {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            /* Footer mobile */
+            .foot {
+                grid-template-columns: 1fr;
+                gap: 24px;
+                padding: 24px 0;
+            }
+
+            /* Form adjustments */
+            #contactForm input,
+            #contactForm textarea {
+                padding: 14px;
+                font-size: 16px;
+                /* Prevents zoom on iOS */
+            }
+
+            /* Map iframe */
+            .map {
+                height: 300px;
+            }
+
+            /* Announcement bar */
+            .announce {
+                padding: 8px 12px;
+                font-size: 14px;
+            }
+
+            /* Back to top button */
+            #toTop {
+                right: 16px;
+                bottom: 80px;
+                padding: 10px 14px;
+            }
+        }
+
+        /* Small mobile devices (up to 480px) */
+        @media (max-width: 480px) {
+            .h1 {
+                font-size: 24px;
+            }
+
+            .hero .inner {
+                padding: 30px 0;
+            }
+
+            .badge {
+                font-size: 12px;
+                padding: 4px 10px;
+            }
+
+            .pill {
+                font-size: 12px;
+                padding: 4px 10px;
+            }
+
+            .card-body {
+                padding: 12px;
+            }
+
+            .price {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 4px;
+            }
+        }
+
+        /* Tablet adjustments (769px to 1024px) */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .grid-4 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .grid-3 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .hero .inner {
+                gap: 30px;
+            }
+
+            .h1 {
+                font-size: 36px;
+            }
+        }
+
+        /* Prevent horizontal scrolling on all devices */
+        html,
+        body {
+            overflow-x: hidden;
+            width: 100%;
+        }
+
+        /* Improve touch targets for mobile */
+        @media (max-width: 768px) {
+
+            button,
+            .btn,
+            a[role="button"] {
+                min-height: 44px;
+                min-width: 44px;
+            }
+
+            /* Ensure text inputs are easily tappable */
+            input[type="text"],
+            input[type="tel"],
+            input[type="email"],
+            textarea {
+                font-size: 16px;
+                /* Prevents zoom on iOS */
+            }
+        }
+
+        /* Animation for mobile menu */
+        .mobile {
+            animation: slideDown 0.3s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Toast notification mobile adjustment */
+        .toast {
+            right: 16px;
+            bottom: 16px;
+            left: 16px;
+            text-align: center;
+        }
+
+        /* WhatsApp CTA button mobile adjustment */
+        .cta {
+            padding: 10px 16px;
+            font-size: 14px;
         }
     </style>
     <script type="application/ld+json">
